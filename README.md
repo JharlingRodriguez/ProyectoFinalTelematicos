@@ -132,5 +132,5 @@ scenarios:
         url: '/'
 ```
 4. Corremos el script con el comando `artillery run test.yml`
-5. Una vez ejecutado vamos al enlace que la consola nos retorna con la **url* del test en *artillery.io*:
+5. Una vez ejecutado vamos al enlace que la consola nos retorna con la **url** del test en *artillery.io*:
 ![Artillery.io Dashboard](https://github.com/JharlingRodriguez/ProyectoFinalTelematicos/assets/77818407/d7e215c7-7baf-4dfe-ad3e-95306cfd079b)
