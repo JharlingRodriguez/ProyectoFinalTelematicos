@@ -70,12 +70,12 @@ sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
 Configuramos los `index.nginx-debian.html` por defecto de Nginx para diferenciar las páginas de entrada de cada servidor:
-```
+```shell
 sudo vim /usr/share/nginx/index.nginx-debian.html
 ```
 ### Configuración del balanceador de carga
 Primero, eliminamos el archivo de configuración predeterminado de Nginx y creamos un nuevo archivo de configuración del balanceador de carga:
-```
+```shell
 sudo rm -rf /etc/nginx/sites-enabled/default
 sudo vim /etc/nginx/conf.d/load-balancing.conf
 ```
@@ -100,15 +100,15 @@ upstream backend {
     }
 ```
 Guardamos y verificamos que Nginx no detecte ningún error de sintaxis:
-```
+```shell
 nginx -t
 ```
 Nginx debería responder de la siguiente manera:
-```
+```shell
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 Por último se reinicia Nginx para aplicar los cambios:
-```
+```shell
 sudo systemctl restart nginx
 ```
