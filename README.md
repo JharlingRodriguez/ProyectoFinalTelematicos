@@ -8,7 +8,7 @@
 
 ## Pasos para el desarrollo
 1. Inicializar nuevo ambiente de Vagrant
-```
+```shell
 vagrant init
 ```
 2. Configuraciones Vagrantfile
@@ -56,16 +56,16 @@ end
 ```
 ### Instalación del servidor Nginx
 Entramos por medio de ssh a cada servidor:
-```
+```shell
 vagrant ssh <ip-servidor>
 ```
 Instalamos Nginx:
-```
+```shell
 sudo apt-get install nginx -y
 ```
 ### Configuración de los Servidores de aplicaciones
 Una vez instalado, iniciamos el servicio Nginx y lo habilitamos para que se inicie al reiniciar el sistema:
-```
+```shell
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
