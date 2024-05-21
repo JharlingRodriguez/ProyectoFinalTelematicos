@@ -71,7 +71,7 @@ sudo systemctl enable nginx
 ```
 Configuramos los `index.nginx-debian.html` por defecto de Nginx para diferenciar las páginas de entrada de cada servidor:
 ```shell
-sudo vim /usr/share/nginx/index.nginx-debian.html
+sudo vim /var/www/html/index.nginx-debian.html
 ```
 ### Configuración del balanceador de carga
 Primero, eliminamos el archivo de configuración predeterminado de Nginx y creamos un nuevo archivo de configuración del balanceador de carga:
