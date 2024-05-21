@@ -1,0 +1,13 @@
+#* 150 requests per second
+config:
+  target: http://192.168.50.40
+  phases:
+    - duration: 60
+      arrivalRate: 150
+      name: phase 1 - 3 servidores 
+
+
+scenarios:
+  - flow:
+    - get:
+        url: '/'
