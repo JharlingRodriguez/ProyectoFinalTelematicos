@@ -112,3 +112,25 @@ Por último se reinicia Nginx para aplicar los cambios:
 ```shell
 sudo systemctl restart nginx
 ```
+## Pruebas con Artillery
+1. Debemos tener instalado `npm` en la maquina host y corremos el comando `npm install -g artillery@latest` para instalar *artillery* de forma global en la maquina.
+2. Revisamos que *artillery* se instaló correctamente con `artillery version` para obtener la versión que se instaló localmente
+3. Creamos un `test.yml` con el que probaremos el load balancer:
+```yml
+#* 100 requests per second
+config:
+  target: http://192.168.50.40 // IP load balancer
+  phases:
+    - duration: 60
+      arrivalRate: 100
+      name: LB Test 
+
+
+scenarios:
+  - flow:
+    - get:
+        url: '/'
+```
+4. Corremos el script con el comando `artillery run asciiart-load-test.yml`
+5. Una vez ejecutado vamos al enlace que la consola nos retorna con la **url* del test en *artillery.io*:
+![Artillery.io Dashboard](https://github.com/JharlingRodriguez/ProyectoFinalTelematicos/assets/77818407/d7e215c7-7baf-4dfe-ad3e-95306cfd079b)
